@@ -1,6 +1,8 @@
 name = "Codex"
 category = "agent"
 description = "OpenAI's coding agent (`codex`)"
+icon = "codex.svg"
+icon_color = "#412991"
 os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["api.openai.com"]

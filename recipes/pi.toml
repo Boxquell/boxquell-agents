@@ -1,6 +1,8 @@
 name = "pi"
 category = "agent"
 description = "Minimal terminal coding agent (`pi`)"
+icon = "pi.svg"
+icon_color = "#5E5CE6"
 os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]

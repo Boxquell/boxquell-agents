@@ -1,6 +1,8 @@
 name = "Orca server"
 category = "agent"
 description = "Headless Orca runtime (`orca serve`) for the Orca desktop app to connect to"
+icon = "orca.svg"
+icon_color = "#1F2937"
 os = ["debian", "ubuntu"]
 install_allow = ["github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
 ports = [7777]
