@@ -1,0 +1,13 @@
+name = "herdr"
+category = "agent"
+description = "Terminal workspace that supervises coding agents (`herdr`); from your computer, attach with `herdr --remote boxquell-<name>`"
+os = ["debian", "ubuntu"]
+install_allow = ["herdr.dev", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
+# Headless use: herdr has no port of its own. It runs in the sandbox, and herdr on your computer attaches over SSH
+# (set up once with `boxquell ssh-config --install`): herdr --remote boxquell-<name>
+# It goes to /usr/local/bin so that non-interactive SSH sessions find it too.
+command = "herdr"
+install = '''
+curl -fsSL https://herdr.dev/install.sh | sudo HERDR_INSTALL_DIR=/usr/local/bin sh
+herdr --version
+'''

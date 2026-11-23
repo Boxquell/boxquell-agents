@@ -17,8 +17,11 @@ boxquell repo update agents          # fetch the latest recipes
 | `opencode` | opencode | `opencode` |
 | `pi` | pi | `pi` |
 | `orca` | Orca server (headless runtime of the [Orca](https://github.com/stablyai/orca) desktop app) | `orca serve` |
+| `herdr` | [herdr](https://github.com/herdrdev/herdr) (terminal workspace for supervising coding agents) | `herdr` |
 
 The Orca server listens on port 7777 in the sandbox. Installing the recipe forwards that port from `127.0.0.1:7777` on your computer, so the pairing link it prints (`ws://127.0.0.1:7777`) works in the Orca app on the same computer. The agents Orca runs (Claude Code, Codex, …) are installed with their own recipes.
+
+herdr has no port of its own. Install the recipe, run `boxquell ssh-config --install` once, and attach from your computer with `herdr --remote boxquell-<name>` (herdr must be installed on your computer too). Inside the sandbox, `herdr` opens it in a terminal.
 
 To pair from another device, let the forward listen on an address that device can reach and tell Orca to advertise it:
 
