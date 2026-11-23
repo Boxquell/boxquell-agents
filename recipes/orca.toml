@@ -1,0 +1,15 @@
+name = "Orca server"
+category = "agent"
+description = "Headless Orca runtime (`orca serve`) for the Orca desktop app to connect to"
+install_allow = ["github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
+command = "orca serve --bind 0.0.0.0 --port 7777"
+install = '''
+case "$(uname -m)" in x86_64) arch=x64 ;; aarch64) arch=arm64 ;; *) echo "unsupported CPU" >&2; exit 1 ;; esac
+cd "$(mktemp -d)"
+curl -fsSLo orca-server.tar.gz "https://github.com/stablyai/orca/releases/latest/download/orca-server-linux-$arch.tar.gz"
+sudo rm -rf /opt/orca
+sudo mkdir -p /opt/orca
+sudo tar -xzf orca-server.tar.gz -C /opt/orca --strip-components=1 --no-same-owner
+sudo ln -sf /opt/orca/bin/orca-ide /usr/local/bin/orca
+orca --version
+'''
