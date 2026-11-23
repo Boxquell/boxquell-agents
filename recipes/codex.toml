@@ -1,6 +1,7 @@
 name = "Codex"
 category = "agent"
 description = "OpenAI's coding agent (`codex`)"
+os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["api.openai.com"]
 secrets = ["openai"]

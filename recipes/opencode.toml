@@ -1,6 +1,7 @@
 name = "opencode"
 category = "agent"
 description = "Open-source coding agent for many providers (`opencode`)"
+os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["models.dev", "opencode.ai", "api.anthropic.com", "api.openai.com", "openrouter.ai"]
 secrets = ["anthropic", "openai", "openrouter"]

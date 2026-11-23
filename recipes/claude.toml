@@ -1,6 +1,7 @@
 name = "Claude Code"
 category = "agent"
 description = "Anthropic's coding agent (`claude`)"
+os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["api.anthropic.com"]
 secrets = ["anthropic", "claude-oauth"]

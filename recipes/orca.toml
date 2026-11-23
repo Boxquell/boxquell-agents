@@ -1,6 +1,7 @@
 name = "Orca server"
 category = "agent"
 description = "Headless Orca runtime (`orca serve`) for the Orca desktop app to connect to"
+os = ["debian", "ubuntu"]
 install_allow = ["github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
 ports = [7777]
 # ORCA_PAIRING_ADDRESS, when set in the sandbox, is the address other devices use to reach the forwarded port.

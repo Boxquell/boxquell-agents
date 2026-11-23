@@ -1,6 +1,7 @@
 name = "pi"
 category = "agent"
 description = "Minimal terminal coding agent (`pi`)"
+os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]
 secrets = ["anthropic", "openai", "openrouter"]
