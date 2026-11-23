@@ -2,7 +2,9 @@ name = "Orca server"
 category = "agent"
 description = "Headless Orca runtime (`orca serve`) for the Orca desktop app to connect to"
 install_allow = ["github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
-command = "orca serve --bind 0.0.0.0 --port 7777"
+ports = [7777]
+# ORCA_PAIRING_ADDRESS, when set in the sandbox, is the address other devices use to reach the forwarded port.
+command = "orca serve --bind 0.0.0.0 --port 7777 ${ORCA_PAIRING_ADDRESS:+--pairing-address $ORCA_PAIRING_ADDRESS}"
 install = '''
 case "$(uname -m)" in x86_64) arch=x64 ;; aarch64) arch=arm64 ;; *) echo "unsupported CPU" >&2; exit 1 ;; esac
 cd "$(mktemp -d)"

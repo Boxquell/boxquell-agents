@@ -18,7 +18,15 @@ boxquell repo update agents          # fetch the latest recipes
 | `pi` | pi | `pi` |
 | `orca` | Orca server (headless runtime of the [Orca](https://github.com/stablyai/orca) desktop app) | `orca serve` |
 
-To reach the Orca server from the Orca app on your computer, forward its port: `boxquell port add mybox 7777`, then connect the app to `127.0.0.1:7777`. The agents Orca runs (Claude Code, Codex, …) are installed with their own recipes.
+The Orca server listens on port 7777 in the sandbox. Installing the recipe forwards that port from `127.0.0.1:7777` on your computer, so the pairing link it prints (`ws://127.0.0.1:7777`) works in the Orca app on the same computer. The agents Orca runs (Claude Code, Codex, …) are installed with their own recipes.
+
+To pair from another device, let the forward listen on an address that device can reach and tell Orca to advertise it:
+
+```sh
+boxquell port rm mybox 7777
+boxquell port add mybox 7777 --bind 192.168.1.20        # an address of your computer
+boxquell run mybox orca serve --bind 0.0.0.0 --port 7777 --pairing-address 192.168.1.20
+```
 
 Each agent recipe allows the API hosts the agent needs and names the host secrets it can use. Node.js comes from the [languages](https://github.com/ToBee94/boxquell-languages) repository.
 
