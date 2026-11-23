@@ -1,0 +1,14 @@
+name = "Claude Code"
+category = "agent"
+description = "Anthropic's coding agent (`claude`)"
+requires = ["node"]
+allow = ["api.anthropic.com"]
+secrets = ["anthropic", "claude-oauth"]
+command = "claude"
+install = '''
+sudo npm install -g --no-fund --no-audit @anthropic-ai/claude-code
+claude --version
+'''
+[env]
+DISABLE_AUTOUPDATER = "1"
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC = "1"

@@ -1,0 +1,11 @@
+name = "Codex"
+category = "agent"
+description = "OpenAI's coding agent (`codex`)"
+requires = ["node"]
+allow = ["api.openai.com"]
+secrets = ["openai"]
+command = "codex"
+install = '''
+sudo npm install -g --no-fund --no-audit @openai/codex
+codex --version
+'''

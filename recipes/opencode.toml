@@ -1,0 +1,11 @@
+name = "opencode"
+category = "agent"
+description = "Open-source coding agent for many providers (`opencode`)"
+requires = ["node"]
+allow = ["models.dev", "opencode.ai", "api.anthropic.com", "api.openai.com", "openrouter.ai"]
+secrets = ["anthropic", "openai", "openrouter"]
+command = "opencode"
+install = '''
+sudo npm install -g --no-fund --no-audit opencode-ai
+opencode --version
+'''

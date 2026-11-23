@@ -1,0 +1,11 @@
+name = "pi"
+category = "agent"
+description = "Minimal terminal coding agent (`pi`)"
+requires = ["node"]
+allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]
+secrets = ["anthropic", "openai", "openrouter"]
+command = "pi"
+install = '''
+sudo npm install -g --no-fund --no-audit @earendil-works/pi-coding-agent
+pi --version
+'''
