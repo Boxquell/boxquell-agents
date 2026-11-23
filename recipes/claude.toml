@@ -16,3 +16,17 @@ claude --version
 [env]
 DISABLE_AUTOUPDATER = "1"
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC = "1"
+
+# Settings on a sandbox's Config tab; each is an environment variable.
+[[config]]
+env = "ANTHROPIC_MODEL"
+label = "Model"
+help = "The model Claude Code starts with."
+options = ["opus", "sonnet", "haiku"]
+placeholder = "Claude Code's default"
+
+[[config]]
+env = "DISABLE_TELEMETRY"
+label = "No usage statistics"
+help = "Do not send usage statistics to Anthropic."
+kind = "switch"
