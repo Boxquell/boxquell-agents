@@ -1,6 +1,6 @@
 # boxquell-agents
 
-Official agent recipes for [Boxquell](https://github.com/ToBee94/boxquell). Boxquell adds this repository by itself on first use.
+Official agent recipes for [Boxquell](https://github.com/Boxquell/boxquell). Boxquell adds this repository by itself on first use.
 
 ```sh
 boxquell recipes                      # everything that can be installed
@@ -28,11 +28,11 @@ boxquell port add mybox 7777 --bind 192.168.1.20        # an address of your com
 boxquell run mybox orca serve --bind 0.0.0.0 --port 7777 --pairing-address 192.168.1.20
 ```
 
-Each agent recipe allows the API hosts the agent needs and names the host secrets it can use. Node.js comes from the [languages](https://github.com/ToBee94/boxquell-languages) repository.
+Each agent recipe allows the API hosts the agent needs and names the host secrets it can use. Node.js comes from the [languages](https://github.com/Boxquell/boxquell-languages) repository.
 
 ## Contributing
 
-One TOML file per recipe in `recipes/`. The format is described in [docs/recipes.md](https://github.com/ToBee94/boxquell/blob/main/docs/recipes.md); the workflow in this repository checks every file.
+One TOML file per recipe in `recipes/`. The format is described in [docs/recipes.md](https://github.com/Boxquell/boxquell/blob/main/docs/recipes.md); the workflow in this repository checks every file.
 
 ## License
 
