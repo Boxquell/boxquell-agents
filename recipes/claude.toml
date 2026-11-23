@@ -1,6 +1,7 @@
 name = "Claude Code"
 category = "agent"
 description = "Anthropic's coding agent (`claude`)"
+icon = "claude.svg"
 os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["api.anthropic.com"]
