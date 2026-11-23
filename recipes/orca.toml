@@ -10,7 +10,10 @@ ports = [7777]
 command = "orca serve --bind 0.0.0.0 --port 7777 ${ORCA_PAIRING_ADDRESS:+--pairing-address $ORCA_PAIRING_ADDRESS}"
 install = '''
 case "$(uname -m)" in x86_64) arch=x64 ;; aarch64) arch=arm64 ;; *) echo "unsupported CPU" >&2; exit 1 ;; esac
-cd "$(mktemp -d)"
+# Downloads go to the disk and are removed again, also when something fails.
+work=$(mktemp -d -p /var/tmp)
+trap 'rm -rf "$work"' EXIT
+cd "$work"
 curl -fsSLo orca-server.tar.gz "https://github.com/stablyai/orca/releases/latest/download/orca-server-linux-$arch.tar.gz"
 sudo rm -rf /opt/orca
 sudo mkdir -p /opt/orca
