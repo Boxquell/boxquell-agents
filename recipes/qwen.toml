@@ -5,8 +5,8 @@ icon = "qwen.svg"
 icon_color = "#6950EF"
 os = ["debian", "ubuntu"]
 requires = ["node"]
-# DashScope is Alibaba Cloud's API; the others are OpenAI-compatible providers
-allow = ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com", "api.openai.com", "openrouter.ai"]
+# DashScope is Alibaba Cloud's API (Qwen Code reads DASHSCOPE_API_KEY only where a modelProviders entry in settings.json names it as envKey; Qwen OAuth sign-in via chat.qwen.ai cannot be replaced by a header); the others are OpenAI-compatible providers
+allow = ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com", "coding.dashscope.aliyuncs.com", "coding-intl.dashscope.aliyuncs.com", "maas.qwencloudapi.com", "maas.qianwenaiapi.com", "models.dev", "api.openai.com", "openrouter.ai"]
 secrets = ["dashscope", "openai", "openrouter"]
 command = "qwen"
 task = "qwen --yolo -p {prompt}"
@@ -19,8 +19,8 @@ qwen --version
 name = "dashscope"
 label = "DashScope API key"
 help = "An API key for Alibaba Cloud Model Studio (DashScope)."
-url = "https://modelstudio.console.alibabacloud.com/?tab=dashboard#/api-key"
-hosts = ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com"]
+url = "https://docs.qwencloud.com/developer-guides/administration/api-keys"
+hosts = ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com", "coding.dashscope.aliyuncs.com", "coding-intl.dashscope.aliyuncs.com", "maas.qwencloudapi.com", "maas.qianwenaiapi.com"]
 env = ["DASHSCOPE_API_KEY"]
 
 [[credential]]
@@ -45,7 +45,7 @@ placeholder = "Qwen Code's default"
 env = "OPENAI_BASE_URL"
 label = "API endpoint"
 help = "The OpenAI-compatible endpoint Qwen Code talks to."
-placeholder = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+placeholder = "Chosen when you sign in"
 
 [[config]]
 env = "QWEN_CODE_MAX_OUTPUT_TOKENS"

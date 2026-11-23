@@ -24,13 +24,5 @@ url = "https://github.com/settings/personal-access-tokens/new"
 [[config]]
 env = "COPILOT_MODEL"
 label = "Model"
-help = "The model Copilot uses; auto lets it pick."
-options = ["auto"]
+help = "The model Copilot uses."
 placeholder = "Copilot's default"
-
-[[config]]
-env = "COPILOT_AUTO_UPDATE"
-label = "Keep itself updated"
-help = "Set to false to stop automatic updates of the CLI."
-kind = "choice"
-options = ["true", "false"]

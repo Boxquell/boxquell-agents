@@ -6,8 +6,8 @@ icon_color = "#000000"
 os = ["debian", "ubuntu"]
 # the installer puts the agent in ~/.local; link it into /usr/local/bin so every session finds it
 install_allow = ["cursor.com", "downloads.cursor.com"]
-allow = ["cursor.com", "*.cursor.sh"]
-secrets = ["cursor"]
+allow = ["cursor.com", "*.cursor.sh", "*.cursorapi.com", "*.cursor-cdn.com"]
+# Sign in with `cursor-agent login` in a session, or set CURSOR_API_KEY (dashboard API key) as an environment variable; the docs do not say how the key is sent, so it is not a managed credential.
 command = "cursor-agent"
 task = "cursor-agent -p --force {prompt}"
 install = '''
@@ -15,11 +15,3 @@ curl -fsS https://cursor.com/install | bash
 sudo ln -sf "$HOME/.local/share/cursor-agent/versions/"*/cursor-agent /usr/local/bin/cursor-agent
 cursor-agent --version
 '''
-
-[[credential]]
-name = "cursor"
-label = "Cursor API key"
-help = "An API key for the Cursor CLI."
-url = "https://cursor.com/dashboard/api"
-hosts = ["api2.cursor.sh"]
-env = ["CURSOR_API_KEY"]

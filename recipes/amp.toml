@@ -7,18 +7,10 @@ os = ["debian", "ubuntu"]
 requires = ["node"]
 # Amp talks to its own service, which brokers the models; AMP_API_KEY signs in
 allow = ["ampcode.com"]
-secrets = ["amp"]
+# Sign in with `amp login` in a session, or set AMP_API_KEY (an sgamp_ token from ampcode.com settings) as an environment variable; the docs do not say how the token is sent, so it is not a managed credential.
 command = "amp"
 task = "amp --dangerously-allow-all -x {prompt}"
 install = '''
 sudo npm install -g --no-fund --no-audit @sourcegraph/amp
 amp --version
 '''
-
-[[credential]]
-name = "amp"
-label = "Amp access token"
-help = "An access token for Amp, used to sign in without a browser."
-url = "https://ampcode.com/settings"
-hosts = ["ampcode.com"]
-env = ["AMP_API_KEY"]
