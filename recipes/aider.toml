@@ -1,0 +1,20 @@
+name = "Aider"
+category = "agent"
+description = "AI pair programming in the terminal (`aider`)"
+icon = "aider.svg"
+icon_color = "#5E5CE6"
+os = ["debian", "ubuntu"]
+requires = ["python"]
+# github.com and the two hosts after it serve the Python that uv fetches (aider wants 3.12)
+install_allow = ["pypi.org", "files.pythonhosted.org", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
+allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]
+secrets = ["anthropic", "openai", "openrouter"]
+command = "aider"
+install = '''
+sudo env UV_TOOL_DIR=/opt/aider UV_TOOL_BIN_DIR=/usr/local/bin UV_PYTHON_INSTALL_DIR=/opt/python UV_PYTHON_BIN_DIR=/usr/local/bin \
+  uv tool install --force --python 3.12 --with pip aider-chat
+aider --version
+'''
+[env]
+AIDER_CHECK_UPDATE = "false"
+AIDER_ANALYTICS_DISABLE = "true"

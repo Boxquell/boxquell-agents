@@ -1,0 +1,15 @@
+name = "GitHub Copilot CLI"
+category = "agent"
+description = "GitHub's coding agent (`copilot`)"
+icon = "githubcopilot.svg"
+icon_color = "#000000"
+os = ["debian", "ubuntu"]
+requires = ["node"]
+# the token is read from GH_TOKEN or GITHUB_TOKEN (fine-grained, with "Copilot Requests")
+allow = ["api.github.com", "api.githubcopilot.com", "*.githubcopilot.com", "copilot-proxy.githubusercontent.com"]
+secrets = ["github"]
+command = "copilot"
+install = '''
+sudo npm install -g --no-fund --no-audit @github/copilot
+copilot --version
+'''

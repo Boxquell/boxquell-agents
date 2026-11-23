@@ -1,0 +1,15 @@
+name = "Qwen Code"
+category = "agent"
+description = "Alibaba's coding agent for Qwen models (`qwen`)"
+icon = "qwen.svg"
+icon_color = "#6950EF"
+os = ["debian", "ubuntu"]
+requires = ["node"]
+# DashScope is Alibaba Cloud's API; the others are OpenAI-compatible providers
+allow = ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com", "api.openai.com", "openrouter.ai"]
+secrets = ["dashscope", "openai", "openrouter"]
+command = "qwen"
+install = '''
+sudo npm install -g --no-fund --no-audit @qwen-code/qwen-code
+qwen --version
+'''

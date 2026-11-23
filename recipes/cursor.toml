@@ -1,0 +1,16 @@
+name = "Cursor CLI"
+category = "agent"
+description = "Cursor's coding agent (`cursor-agent`)"
+icon = "cursor.svg"
+icon_color = "#000000"
+os = ["debian", "ubuntu"]
+# the installer puts the agent in ~/.local; link it into /usr/local/bin so every session finds it
+install_allow = ["cursor.com", "downloads.cursor.com"]
+allow = ["cursor.com", "*.cursor.sh"]
+secrets = ["cursor"]
+command = "cursor-agent"
+install = '''
+curl -fsS https://cursor.com/install | bash
+sudo ln -sf "$HOME/.local/share/cursor-agent/versions/"*/cursor-agent /usr/local/bin/cursor-agent
+cursor-agent --version
+'''

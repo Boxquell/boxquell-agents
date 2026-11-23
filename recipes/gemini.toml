@@ -1,0 +1,15 @@
+name = "Gemini CLI"
+category = "agent"
+description = "Google's coding agent (`gemini`)"
+icon = "googlegemini.svg"
+icon_color = "#8E75B2"
+os = ["debian", "ubuntu"]
+requires = ["node"]
+# generativelanguage.googleapis.com serves the Gemini API (GEMINI_API_KEY)
+allow = ["generativelanguage.googleapis.com"]
+secrets = ["gemini"]
+command = "gemini"
+install = '''
+sudo npm install -g --no-fund --no-audit @google/gemini-cli
+gemini --version
+'''

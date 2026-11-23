@@ -18,6 +18,13 @@ boxquell repo update agents          # fetch the latest recipes
 | `pi` | pi | `pi` |
 | `orca` | Orca server (headless runtime of the [Orca](https://github.com/stablyai/orca) desktop app) | `orca serve` |
 | `herdr` | [herdr](https://github.com/herdrdev/herdr) (terminal workspace for supervising coding agents) | `herdr` |
+| `gemini` | Gemini CLI | `gemini` |
+| `aider` | Aider | `aider` |
+| `goose` | goose (Block) | `goose` |
+| `amp` | Amp (Sourcegraph) | `amp` |
+| `copilot` | GitHub Copilot CLI | `copilot` |
+| `cursor` | Cursor CLI | `cursor-agent` |
+| `qwen` | Qwen Code | `qwen` |
 
 The Orca server listens on port 7777 in the sandbox. Installing the recipe forwards that port from `127.0.0.1:7777` on your computer, so the pairing link it prints (`ws://127.0.0.1:7777`) works in the Orca app on the same computer. The agents Orca runs (Claude Code, Codex, …) are installed with their own recipes.
 

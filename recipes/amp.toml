@@ -1,0 +1,15 @@
+name = "Amp"
+category = "agent"
+description = "Sourcegraph's coding agent (`amp`)"
+icon = "amp.svg"
+icon_color = "#2C3A2A"
+os = ["debian", "ubuntu"]
+requires = ["node"]
+# Amp talks to its own service, which brokers the models; AMP_API_KEY signs in
+allow = ["ampcode.com"]
+secrets = ["amp"]
+command = "amp"
+install = '''
+sudo npm install -g --no-fund --no-audit @sourcegraph/amp
+amp --version
+'''
