@@ -9,6 +9,7 @@ requires = ["node"]
 allow = ["api.github.com", "api.githubcopilot.com", "*.githubcopilot.com", "copilot-proxy.githubusercontent.com"]
 secrets = ["github"]
 command = "copilot"
+task = "copilot --allow-all-tools -p {prompt}"
 install = '''
 sudo npm install -g --no-fund --no-audit @github/copilot
 copilot --version

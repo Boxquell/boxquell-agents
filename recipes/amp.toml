@@ -9,6 +9,7 @@ requires = ["node"]
 allow = ["ampcode.com"]
 secrets = ["amp"]
 command = "amp"
+task = "amp --dangerously-allow-all -x {prompt}"
 install = '''
 sudo npm install -g --no-fund --no-audit @sourcegraph/amp
 amp --version

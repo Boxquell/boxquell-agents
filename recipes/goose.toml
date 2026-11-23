@@ -10,6 +10,7 @@ allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]
 secrets = ["anthropic", "openai", "openrouter"]
 model_env = "GOOSE_MODEL"
 command = "goose"
+task = "GOOSE_MODE=auto goose run -t {prompt}"
 install = '''
 sudo apt-get update -q
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends bzip2

@@ -11,6 +11,7 @@ allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]
 secrets = ["anthropic", "openai", "openrouter"]
 model_env = "AIDER_MODEL"
 command = "aider"
+task = "aider --yes --message {prompt}"
 install = '''
 sudo env UV_TOOL_DIR=/opt/aider UV_TOOL_BIN_DIR=/usr/local/bin UV_PYTHON_INSTALL_DIR=/opt/python UV_PYTHON_BIN_DIR=/usr/local/bin \
   uv tool install --force --python 3.12 --with pip aider-chat

@@ -9,6 +9,7 @@ requires = ["node"]
 allow = ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com", "api.openai.com", "openrouter.ai"]
 secrets = ["dashscope", "openai", "openrouter"]
 command = "qwen"
+task = "qwen --yolo -p {prompt}"
 install = '''
 sudo npm install -g --no-fund --no-audit @qwen-code/qwen-code
 qwen --version

@@ -8,6 +8,7 @@ requires = ["node"]
 allow = ["api.openai.com"]
 secrets = ["openai"]
 command = "codex"
+task = "codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check {prompt}"
 install = '''
 sudo npm install -g --no-fund --no-audit @openai/codex
 codex --version

@@ -9,6 +9,7 @@ allow = ["api.anthropic.com"]
 secrets = ["anthropic", "claude-oauth"]
 model_env = "ANTHROPIC_MODEL"
 command = "claude"
+task = "claude -p {prompt} --dangerously-skip-permissions"
 install = '''
 sudo npm install -g --no-fund --no-audit @anthropic-ai/claude-code
 claude --version

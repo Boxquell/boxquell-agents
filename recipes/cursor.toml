@@ -9,6 +9,7 @@ install_allow = ["cursor.com", "downloads.cursor.com"]
 allow = ["cursor.com", "*.cursor.sh"]
 secrets = ["cursor"]
 command = "cursor-agent"
+task = "cursor-agent -p --force {prompt}"
 install = '''
 curl -fsS https://cursor.com/install | bash
 sudo ln -sf "$HOME/.local/share/cursor-agent/versions/"*/cursor-agent /usr/local/bin/cursor-agent

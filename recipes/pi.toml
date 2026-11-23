@@ -8,6 +8,7 @@ requires = ["node"]
 allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]
 secrets = ["anthropic", "openai", "openrouter"]
 command = "pi"
+task = "pi -p {prompt}"
 install = '''
 sudo npm install -g --no-fund --no-audit @earendil-works/pi-coding-agent
 pi --version
