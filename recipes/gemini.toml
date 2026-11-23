@@ -8,6 +8,7 @@ requires = ["node"]
 # generativelanguage.googleapis.com serves the Gemini API (GEMINI_API_KEY)
 allow = ["generativelanguage.googleapis.com"]
 secrets = ["gemini"]
+model_env = "GEMINI_MODEL"
 command = "gemini"
 install = '''
 sudo npm install -g --no-fund --no-audit @google/gemini-cli

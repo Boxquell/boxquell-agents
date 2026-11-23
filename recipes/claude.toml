@@ -7,6 +7,7 @@ os = ["debian", "ubuntu"]
 requires = ["node"]
 allow = ["api.anthropic.com"]
 secrets = ["anthropic", "claude-oauth"]
+model_env = "ANTHROPIC_MODEL"
 command = "claude"
 install = '''
 sudo npm install -g --no-fund --no-audit @anthropic-ai/claude-code

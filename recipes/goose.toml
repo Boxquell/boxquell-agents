@@ -8,6 +8,7 @@ os = ["debian", "ubuntu"]
 install_allow = ["@packages", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
 allow = ["api.anthropic.com", "api.openai.com", "openrouter.ai"]
 secrets = ["anthropic", "openai", "openrouter"]
+model_env = "GOOSE_MODEL"
 command = "goose"
 install = '''
 sudo apt-get update -q
