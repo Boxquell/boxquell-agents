@@ -16,3 +16,57 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommend
 curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | sudo env GOOSE_BIN_DIR=/usr/local/bin CONFIGURE=false bash
 goose --version
 '''
+
+[[credential]]
+name = "anthropic"
+label = "Anthropic API key"
+help = "An API key from the Anthropic Console."
+url = "https://console.anthropic.com/settings/keys"
+
+[[credential]]
+name = "openai"
+label = "OpenAI API key"
+help = "An API key from the OpenAI platform."
+url = "https://platform.openai.com/api-keys"
+
+[[credential]]
+name = "openrouter"
+label = "OpenRouter API key"
+help = "An API key from OpenRouter."
+url = "https://openrouter.ai/keys"
+
+[[config]]
+env = "GOOSE_PROVIDER"
+label = "Provider"
+help = "The model provider goose uses."
+options = ["anthropic", "openai", "openrouter"]
+
+[[config]]
+env = "GOOSE_MODE"
+label = "Approval mode"
+help = "How goose asks before it acts."
+kind = "choice"
+options = ["auto", "approve", "smart_approve"]
+placeholder = "auto"
+
+[[config]]
+env = "GOOSE_MAX_TURNS"
+label = "Max turns"
+help = "How many steps goose may take before it asks you."
+kind = "number"
+placeholder = "1000"
+
+[[config]]
+env = "GOOSE_TEMPERATURE"
+label = "Temperature"
+help = "Randomness of replies, from 0.0 to 1.0."
+kind = "number"
+placeholder = "The model's default"
+
+[[config]]
+env = "GOOSE_CLI_THEME"
+label = "Color theme"
+help = "The colors goose uses in the terminal."
+kind = "choice"
+options = ["light", "dark", "ansi"]
+placeholder = "ansi"

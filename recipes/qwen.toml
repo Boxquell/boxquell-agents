@@ -13,3 +13,42 @@ install = '''
 sudo npm install -g --no-fund --no-audit @qwen-code/qwen-code
 qwen --version
 '''
+
+[[credential]]
+name = "dashscope"
+label = "DashScope API key"
+help = "An API key for Alibaba Cloud Model Studio (DashScope)."
+url = "https://modelstudio.console.alibabacloud.com/?tab=dashboard#/api-key"
+hosts = ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com"]
+env = ["DASHSCOPE_API_KEY"]
+
+[[credential]]
+name = "openai"
+label = "OpenAI API key"
+help = "An API key from the OpenAI platform."
+url = "https://platform.openai.com/api-keys"
+
+[[credential]]
+name = "openrouter"
+label = "OpenRouter API key"
+help = "An API key from OpenRouter."
+url = "https://openrouter.ai/keys"
+
+[[config]]
+env = "OPENAI_MODEL"
+label = "Model"
+help = "The model name sent to an OpenAI-compatible provider."
+placeholder = "Qwen Code's default"
+
+[[config]]
+env = "OPENAI_BASE_URL"
+label = "API endpoint"
+help = "The OpenAI-compatible endpoint Qwen Code talks to."
+placeholder = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+[[config]]
+env = "QWEN_CODE_MAX_OUTPUT_TOKENS"
+label = "Max output tokens"
+help = "A fixed limit on the tokens of one reply."
+kind = "number"
+placeholder = "The model's limit"

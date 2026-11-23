@@ -30,3 +30,55 @@ env = "DISABLE_TELEMETRY"
 label = "No usage statistics"
 help = "Do not send usage statistics to Anthropic."
 kind = "switch"
+
+[[credential]]
+name = "anthropic"
+label = "Anthropic API key"
+help = "An API key from the Anthropic Console, for pay-as-you-go use."
+url = "https://console.anthropic.com/settings/keys"
+
+[[credential]]
+name = "claude-oauth"
+label = "Claude subscription token"
+help = "A long-lived token for a Claude subscription, created with claude setup-token."
+url = "https://code.claude.com/docs/en/authentication"
+
+[[config]]
+env = "ANTHROPIC_DEFAULT_HAIKU_MODEL"
+label = "Small model"
+help = "The model the haiku alias stands for, also used for background tasks."
+placeholder = "Claude Code's default"
+
+[[config]]
+env = "ANTHROPIC_BASE_URL"
+label = "API endpoint"
+help = "Send requests through a proxy or gateway instead of Anthropic."
+placeholder = "https://api.anthropic.com"
+
+[[config]]
+env = "CLAUDE_CODE_MAX_OUTPUT_TOKENS"
+label = "Max output tokens"
+help = "The most tokens a single reply may have."
+kind = "number"
+placeholder = "32000"
+
+[[config]]
+env = "MAX_THINKING_TOKENS"
+label = "Thinking budget"
+help = "Tokens the model may spend thinking; 0 turns extended thinking off."
+kind = "number"
+placeholder = "Claude Code's default"
+
+[[config]]
+env = "BASH_DEFAULT_TIMEOUT_MS"
+label = "Command timeout (ms)"
+help = "How long a shell command may run before it is stopped."
+kind = "number"
+placeholder = "120000"
+
+[[config]]
+env = "BASH_MAX_TIMEOUT_MS"
+label = "Longest command timeout (ms)"
+help = "The longest timeout the model may ask for a shell command."
+kind = "number"
+placeholder = "600000"

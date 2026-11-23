@@ -13,3 +13,11 @@ install = '''
 sudo npm install -g --no-fund --no-audit @sourcegraph/amp
 amp --version
 '''
+
+[[credential]]
+name = "amp"
+label = "Amp access token"
+help = "An access token for Amp, used to sign in without a browser."
+url = "https://ampcode.com/settings"
+hosts = ["ampcode.com"]
+env = ["AMP_API_KEY"]

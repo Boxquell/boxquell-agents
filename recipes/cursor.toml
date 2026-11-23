@@ -14,3 +14,11 @@ curl -fsS https://cursor.com/install | bash
 sudo ln -sf "$HOME/.local/share/cursor-agent/versions/"*/cursor-agent /usr/local/bin/cursor-agent
 cursor-agent --version
 '''
+
+[[credential]]
+name = "cursor"
+label = "Cursor API key"
+help = "An API key for the Cursor CLI."
+url = "https://cursor.com/dashboard/api"
+hosts = ["api2.cursor.sh"]
+env = ["CURSOR_API_KEY"]

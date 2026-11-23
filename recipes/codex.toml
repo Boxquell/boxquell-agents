@@ -12,3 +12,9 @@ install = '''
 sudo npm install -g --no-fund --no-audit @openai/codex
 codex --version
 '''
+
+[[credential]]
+name = "openai"
+label = "OpenAI API key"
+help = "An API key from the OpenAI platform."
+url = "https://platform.openai.com/api-keys"

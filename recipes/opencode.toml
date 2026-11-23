@@ -12,3 +12,21 @@ install = '''
 sudo npm install -g --no-fund --no-audit opencode-ai
 opencode --version
 '''
+
+[[credential]]
+name = "anthropic"
+label = "Anthropic API key"
+help = "An API key from the Anthropic Console."
+url = "https://console.anthropic.com/settings/keys"
+
+[[credential]]
+name = "openai"
+label = "OpenAI API key"
+help = "An API key from the OpenAI platform."
+url = "https://platform.openai.com/api-keys"
+
+[[credential]]
+name = "openrouter"
+label = "OpenRouter API key"
+help = "An API key from OpenRouter."
+url = "https://openrouter.ai/keys"

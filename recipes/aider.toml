@@ -19,3 +19,70 @@ aider --version
 [env]
 AIDER_CHECK_UPDATE = "false"
 AIDER_ANALYTICS_DISABLE = "true"
+
+[[credential]]
+name = "anthropic"
+label = "Anthropic API key"
+help = "An API key from the Anthropic Console."
+url = "https://console.anthropic.com/settings/keys"
+
+[[credential]]
+name = "openai"
+label = "OpenAI API key"
+help = "An API key from the OpenAI platform."
+url = "https://platform.openai.com/api-keys"
+
+[[credential]]
+name = "openrouter"
+label = "OpenRouter API key"
+help = "An API key from OpenRouter."
+url = "https://openrouter.ai/keys"
+
+[[config]]
+env = "AIDER_WEAK_MODEL"
+label = "Weak model"
+help = "The cheaper model used for commit messages and summaries."
+placeholder = "Chosen from the main model"
+
+[[config]]
+env = "AIDER_EDITOR_MODEL"
+label = "Editor model"
+help = "The model that applies edits in architect mode."
+placeholder = "Chosen from the main model"
+
+[[config]]
+env = "AIDER_AUTO_COMMITS"
+label = "Commit automatically"
+help = "Commit every change Aider makes."
+kind = "switch"
+on = "true"
+placeholder = "On"
+
+[[config]]
+env = "AIDER_AUTO_TEST"
+label = "Run tests after edits"
+help = "Run the test command after each change and fix failures."
+kind = "switch"
+on = "true"
+
+[[config]]
+env = "AIDER_DARK_MODE"
+label = "Dark terminal colors"
+help = "Use colors that suit a dark terminal."
+kind = "switch"
+on = "true"
+
+[[config]]
+env = "AIDER_CHECK_UPDATE"
+label = "Check for updates"
+help = "Look for a newer Aider at startup."
+kind = "choice"
+options = ["true", "false"]
+placeholder = "true"
+
+[[config]]
+env = "AIDER_ANALYTICS_DISABLE"
+label = "No usage statistics"
+help = "Turn off anonymous analytics."
+kind = "switch"
+on = "true"

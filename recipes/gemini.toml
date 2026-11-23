@@ -14,3 +14,17 @@ install = '''
 sudo npm install -g --no-fund --no-audit @google/gemini-cli
 gemini --version
 '''
+
+[[credential]]
+name = "gemini"
+label = "Gemini API key"
+help = "An API key from Google AI Studio."
+url = "https://aistudio.google.com/app/apikey"
+hosts = ["generativelanguage.googleapis.com"]
+env = ["GEMINI_API_KEY"]
+
+[[config]]
+env = "GOOGLE_GEMINI_BASE_URL"
+label = "API endpoint"
+help = "Send Gemini API requests through a proxy or gateway."
+placeholder = "Google's Gemini API"
