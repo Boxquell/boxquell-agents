@@ -5,9 +5,10 @@ icon = "orca.svg"
 icon_color = "#1F2937"
 os = ["debian", "ubuntu"]
 install_allow = ["github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"]
-ports = [7777]
+port_env = "ORCA_PORT"
+# ORCA_PORT is chosen per sandbox by Boxquell and forwarded from the host; 7777 applies to sandboxes that predate it.
 # ORCA_PAIRING_ADDRESS, when set in the sandbox, is the address other devices use to reach the forwarded port.
-command = "orca serve --bind 0.0.0.0 --port 7777 ${ORCA_PAIRING_ADDRESS:+--pairing-address $ORCA_PAIRING_ADDRESS}"
+command = "orca serve --bind 0.0.0.0 --port ${ORCA_PORT:-7777} ${ORCA_PAIRING_ADDRESS:+--pairing-address $ORCA_PAIRING_ADDRESS}"
 install = '''
 case "$(uname -m)" in x86_64) arch=x64 ;; aarch64) arch=arm64 ;; *) echo "unsupported CPU" >&2; exit 1 ;; esac
 # Downloads go to the disk and are removed again, also when something fails.
@@ -21,3 +22,9 @@ sudo tar -xzf orca-server.tar.gz -C /opt/orca --strip-components=1 --no-same-own
 sudo ln -sf /opt/orca/bin/orca-ide /usr/local/bin/orca
 orca --version
 '''
+
+[[config]]
+env = "ORCA_PORT"
+label = "Listener port"
+help = "The port Orca listens on in the sandbox and that is forwarded to this computer. Each sandbox gets its own free port; set one or choose another at random."
+kind = "port"
